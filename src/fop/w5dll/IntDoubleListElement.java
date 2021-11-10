@@ -3,7 +3,7 @@ package fop.w5dll;
 public class IntDoubleListElement {
     public IntDoubleListElement prev;
     public IntDoubleListElement next;
-    private final int info;
+    private int info;
 
     public IntDoubleListElement(int info) {
         this.info = info;
