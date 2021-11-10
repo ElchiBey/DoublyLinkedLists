@@ -44,7 +44,7 @@ public class IntDoubleList {
         for(int i=0; i<pos; i++){
             curElement = curElement.next;
         }
-        return curElement.setInfo();
+        return curElement.getInfo();
     }
 
     public void remove(int pos){
@@ -86,7 +86,7 @@ public class IntDoubleList {
         int sum = 0;
         IntDoubleListElement curElement = head;
         while(curElement != null) {
-            sum += curElement.setInfo();;
+            sum += curElement.getInfo();;
             curElement = curElement.next;
         }
         return sum;
@@ -96,7 +96,7 @@ public class IntDoubleList {
         IntDoubleList listcopy = new IntDoubleList();
         IntDoubleListElement curElement = head;
         while(curElement!=null){
-            listcopy.append(curElement.setInfo());
+            listcopy.append(curElement.getInfo());
             curElement = curElement.next;
         }
         return listcopy;
@@ -107,7 +107,7 @@ public class IntDoubleList {
         IntDoubleListElement curElement = head;
         int index = 0;
         while(curElement != null){
-            if(curElement.setInfo() == intValue){
+            if(curElement.getInfo() == intValue){
                 elems[index] = curElement;
                 index++;
             }
@@ -124,7 +124,7 @@ public class IntDoubleList {
         StringBuilder result = new StringBuilder();
         IntDoubleListElement curElement = head;
         while(curElement!=null) {
-            result.append(curElement.setInfo());
+            result.append(curElement.getInfo());
             if(curElement.next!=null) result.append(", ");
             curElement = curElement.next;
         }
