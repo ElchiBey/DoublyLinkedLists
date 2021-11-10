@@ -39,4 +39,73 @@ public class IntDoubleList {
         return count;
     }
 
+    public int get(int pos){
+        IntDoubleListElement curElement = head;
+        for(int i=0; i<pos; i++){
+            curElement = curElement.next;
+        }
+        return curElement.getInfo();
+    }
+
+    boolean isEqual(IntDoubleList other) {
+        if (size() != other.size()) return false;
+        IntDoubleListElement thisListCurElement = getLastElement();
+        IntDoubleListElement otherListCurElement = other.getFirstElement();
+        while (thisListCurElement != null) {
+            if (!thisListCurElement.isEqual(otherListCurElement)) return false;
+            thisListCurElement = thisListCurElement.next;
+            otherListCurElement = otherListCurElement.next;
+        }
+        return true;
+    }
+
+    public int sum(){
+        int sum = 0;
+        IntDoubleListElement curElement = head;
+        while(curElement != null) {
+            sum += curElement.getInfo();;
+            curElement = curElement.next;
+        }
+        return sum;
+    }
+
+    public IntDoubleList copy(){
+        IntDoubleList listcopy = new IntDoubleList();
+        IntDoubleListElement curElement = head;
+        while(curElement!=null){
+            listcopy.append(curElement.getInfo());
+            curElement = curElement.next;
+        }
+        return listcopy;
+    }
+
+    public IntDoubleListElement[] search(int intValue){
+        IntDoubleListElement[] elems = new IntDoubleListElement[size()];
+        IntDoubleListElement curElement = head;
+        int index = 0;
+        while(curElement != null){
+            if(curElement.getInfo() == intValue){
+                elems[index] = curElement;
+                index++;
+            }
+            curElement = curElement.next;
+        }
+        IntDoubleListElement[] result = new IntDoubleListElement[index];
+        for(int i=0; i<index; i++){
+            result[i] = elems[i];
+        }
+        return result;
+    }
+
+    public String toString(){
+        StringBuilder result = new StringBuilder();
+        IntDoubleListElement curElement = head;
+        while(curElement!=null) {
+            result.append(curElement.getInfo());
+            if(curElement.next!=null) result.append(", ");
+            curElement = curElement.next;
+        }
+        return result.toString();
+    }
+
 }
