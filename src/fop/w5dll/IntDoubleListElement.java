@@ -11,11 +11,11 @@ public class IntDoubleListElement {
         next = null;
     }
 
-    public int getInfo() {
+    public int setInfo() {
         return info;
     }
 
     boolean isEqual(IntDoubleListElement other) {
-        return info == other.getInfo();
+        return info == other.setInfo();
     }
 }
