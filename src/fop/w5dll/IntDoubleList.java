@@ -47,6 +47,29 @@ public class IntDoubleList {
         return curElement.getInfo();
     }
 
+    public void remove(int pos){
+        if(pos == 0){
+            head = head.next;
+            if(head!=null) {
+                head.prev = null;
+            } else {
+                tail = null;
+            }
+        }
+        else {
+            IntDoubleListElement curElement = head;
+            for(int i=0; i<pos-1; i++){
+                curElement = curElement.next;
+            }
+            curElement.next = curElement.next.next;
+            if(curElement.next != null) {
+                curElement.next.prev = curElement;
+            } else {
+                tail = curElement;
+            }
+        }
+    }
+
     boolean isEqual(IntDoubleList other) {
         if (size() != other.size()) return false;
         IntDoubleListElement thisListCurElement = getLastElement();
