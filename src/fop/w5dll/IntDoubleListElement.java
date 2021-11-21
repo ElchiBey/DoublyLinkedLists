@@ -17,6 +17,26 @@ public class IntDoubleListElement {
     }
 
     boolean isEqual(IntDoubleListElement other) {
-        return info == other.getInfo();
+        return (info == other.getInfo());
+    }
+
+    public void setNext(IntDoubleListElement next) {
+        this.next = next;
+    }
+
+    public IntDoubleListElement getNext() {
+        return next;
+    }
+
+    public IntDoubleListElement getPrev() {
+        return prev;
+    }
+
+    public void setInfo(int info) {
+        this.info = info;
+    }
+
+    public void setPrev(IntDoubleListElement prev) {
+        this.prev = prev;
     }
 }

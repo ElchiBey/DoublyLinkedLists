@@ -72,7 +72,7 @@ public class IntDoubleList {
 
     boolean isEqual(IntDoubleList other) {
         if (size() != other.size()) return false;
-        IntDoubleListElement thisListCurElement = getLastElement();
+        IntDoubleListElement thisListCurElement = getFirstElement();
         IntDoubleListElement otherListCurElement = other.getFirstElement();
         while (thisListCurElement != null) {
             if (!thisListCurElement.isEqual(otherListCurElement)) return false;
@@ -93,13 +93,13 @@ public class IntDoubleList {
     }
 
     public IntDoubleList copy(){
-        IntDoubleList listcopy = new IntDoubleList();
+        IntDoubleList listCopy = new IntDoubleList();
         IntDoubleListElement curElement = head;
         while(curElement!=null){
-            listcopy.append(curElement.getInfo());
+            listCopy.append(curElement.getInfo());
             curElement = curElement.next;
         }
-        return listcopy;
+        return listCopy;
     }
 
     public IntDoubleListElement[] search(int intValue){
@@ -131,4 +131,19 @@ public class IntDoubleList {
         return result.toString();
     }
 
+    public IntDoubleListElement getHead() {
+        return head;
+    }
+
+    public IntDoubleListElement getTail() {
+        return tail;
+    }
+
+    public void setHead(IntDoubleListElement head) {
+        this.head = head;
+    }
+
+    public void setTail(IntDoubleListElement tail) {
+        this.tail = tail;
+    }
 }
