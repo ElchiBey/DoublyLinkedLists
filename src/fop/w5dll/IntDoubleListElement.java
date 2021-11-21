@@ -20,13 +20,13 @@ public class IntDoubleListElement {
         return (info == other.getInfo());
     }
 
-    public void setNext(IntDoubleListElement next) {
-        this.next = next;
-    }
-
-    public IntDoubleListElement getNext() {
-        return next;
-    }
+//    public IntDoubleListElement getNext() {
+//        return next;
+//    }
+//
+//    public void setNext(IntDoubleListElement next) {
+//        this.next = next;
+//    }
 
     public IntDoubleListElement getPrev() {
         return prev;
